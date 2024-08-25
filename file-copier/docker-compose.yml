@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  file-copy:
+    image: util:file-copy-latest
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    restart: unless-stopped
+    volumes:
+      - ./data/input:/data/input
+      - ./data/output:/data/output
