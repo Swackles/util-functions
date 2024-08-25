@@ -1,4 +1,4 @@
-name: Deploy app
+name: Upload File Copier
 
 on:
   push:
@@ -34,7 +34,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./file-copier
           file: ./file-copier/Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
