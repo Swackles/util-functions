@@ -20,7 +20,7 @@ class MyEventHandler(FileSystemEventHandler):
 
             print("Detected file \"", event.src_path, "\", moving to \"", output_path, "\"")
 
-            shutil.copyfile(event.src_path, output_path)
+            shutil.copy2(event.src_path, output_path)
 
 observer = Observer()
 observer.schedule(MyEventHandler(), INPUT_DIR, recursive=True)
